@@ -61,6 +61,7 @@ dependencies {
     /**
      * mark：引用本地库angux，这里的angux为alidd:1.1.4等同效果，在发布livery框架时，需要注释掉本地库
      * */
+//    api project(':angux')
     api 'com.github.qydq:bear:1.2.14'
     /**
      * mark：引用bintray中远程库，这里的alidd:1.1.4与本地库angux等同，在发布livery框架时，使用api依赖bintray库
