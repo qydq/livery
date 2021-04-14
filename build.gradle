@@ -1,0 +1,111 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+
+buildscript {
+    ext {
+        gradle_build_version = '3.6.3'
+        bintray_version = '1.7.3'
+        gms_service_version = '3.1.1'
+        dokka_version = '1.4.10.2'
+    }
+    repositories {
+        google()
+        maven { url 'https://jitpack.io' }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_build_version"
+        //livery框架添加-2021年04月08日前-原jcenter依赖
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray_version"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+
+//        classpath 'com.novoda:bintray-release:+' // 2021年04月08日前-原jcenter依赖
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        /*添加Google服务：Google Firebase cloud messaging
+        * 参考如下链接：https://www.jianshu.com/p/b50f5aee4403
+        * */
+        classpath "com.google.gms:google-services:$gms_service_version"
+//        2021 年04月08日以后 - mavenCentral增加
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven { url 'https://jitpack.io' }
+        jcenter()
+    }
+    /*todo fix:
+    防止-Xlint:unchecked 重新编译。错误*/
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+            // Try to turn them all off automatically
+            options.compilerArgs << '-Xlint:none'
+            options.compilerArgs << '-nowarn' // same as '-Xlint:none'
+
+            // Turn them off manually
+            options.compilerArgs << '-Xlint:-auxiliaryclass'
+            options.compilerArgs << '-Xlint:-cast'
+            options.compilerArgs << '-Xlint:-classfile'
+            options.compilerArgs << '-Xlint:-deprecation'
+            options.compilerArgs << '-Xlint:-dep-ann'
+            options.compilerArgs << '-Xlint:-divzero'
+            options.compilerArgs << '-Xlint:-empty'
+            options.compilerArgs << '-Xlint:-fallthrough'
+            options.compilerArgs << '-Xlint:-finally'
+            options.compilerArgs << '-Xlint:-options'
+            options.compilerArgs << '-Xlint:-overloads'
+            options.compilerArgs << '-Xlint:-overrides'
+            options.compilerArgs << '-Xlint:-path'
+            options.compilerArgs << '-Xlint:-processing'
+            options.compilerArgs << '-Xlint:-rawtypes'
+            options.compilerArgs << '-Xlint:-serial'
+            options.compilerArgs << '-Xlint:-static'
+            options.compilerArgs << '-Xlint:-try'
+            options.compilerArgs << '-Xlint:-unchecked'
+            options.compilerArgs << '-Xlint:-varargs'
+        }
+    }
+    /*todo fix :
+    忽略java编译时的警告*/
+    tasks.withType(JavaCompile) {
+        configure(options) {
+            incremental = true
+        }
+//        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        options.encoding = "UTF-8"
+    }
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-compat'
+        all*.exclude group: 'com.android.support', module: 'support-v4'
+        all*.exclude group: 'com.android.support', module: 'support-annotations'
+        all*.exclude group: 'com.android.support', module: 'support-fragment'
+        all*.exclude group: 'com.android.support', module: 'support-core-utils'
+        all*.exclude group: 'com.android.support', module: 'support-core-ui'
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+//解决Javadoc generation failed Generated Javadoc options file
+//https://blog.csdn.net/u013279866/article/details/90231187
+
+/**
+ * mark：发布angux时（alidd）打开
+ * */
+//tasks.getByPath(":bear:javadocRelease").enabled = false
+/**
+ * mark：发布livery，打开
+ * */
+//tasks.getByPath(":livery:javadocRelease").enabled = false

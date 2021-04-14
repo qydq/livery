@@ -1,0 +1,128 @@
+ext {
+    currentVersion = '1.0.0'
+
+    cfgs = [
+            applicationId                 : "com.sunsta.damo",
+            compileSdkVersion             : 29,
+            buildToolsVersion             : "29.0.2",
+            minSdkVersion                 : 21,
+            targetSdkVersion              : 29,
+
+            versionCode                   : 2,
+            versionName                   : "1.0.2",
+
+            //library
+            bearGroupId                   : "com.sunsta.bear",
+            bearVersionCode               : 11105,
+            bearVersionName               : "1.1.105",
+
+            liveryGroupId                 : "com.sunsta.livery",
+            liveryVersionCode             : 111110,
+            liveryVersionName             : "1.1.110",
+
+            //open version control
+            androidSupportVersion         : "27.0.2",
+            version_recyclerview          : "1.0.0",
+            version_appcompat             : "1.0.0",
+
+
+            camerax_version               : "1.0.0-alpha10",
+            camerax_view_version          : "1.0.0-alpha05",
+            camera_core_version           : "1.0.0-beta01",
+            futures_version               : "1.0.0",
+
+            // ucrop
+            androidx_appcompat_version    : "1.1.0",
+            androidx_exifinterface_version: "1.1.0-beta01",
+            androidx_transition_version   : "1.2.0-rc01",
+
+            // okio
+            okio_version                  : "2.5.0"
+
+    ]
+
+    plugins = [
+            library    : 'com.android.library',
+            application: 'com.android.application',
+            maven      : 'com.github.dcendents.android-maven',
+            bintray    : 'com.qydq.bintray'
+    ]
+
+    android = [
+            applicationId    : "com.aili",
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.2",
+
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+
+            versionCode      : 1,
+            versionName      : "1.1.4",
+    ]
+
+    bintray = [
+            version       : "1.1.4",
+
+            siteUrl       : 'https://github.com/qydq/Integrate',
+            gitUrl        : 'git@github.com:qydq/Integrate.git',
+
+            group         : "com.nebula",
+
+            // project
+            packaging     : 'aar',
+            name          : 'Integrate',
+            description   : 'Integrate For Android',
+
+            // project.license
+            licenseName   : 'The Apache Software License, Version 2.0',
+            licenseUrl    : 'http://www.apache.org/licenses/LICENSE-2.0.txt',
+
+            // project.developers
+            developerId   : 'qydq',
+            developerName : 'qydq',
+            developerEmail: 'qyddai@163.com',
+
+            // bintray
+            binrayLibrary : "recyclerview-swipe",
+            bintrayRepo   : "maven",
+            bintrayUser   : 'qydq',
+            bintrayLicense: "Apache-2.0"
+    ]
+
+    dependencies = [
+            testrunner     : 'androidx.test:runner:1.2.0',//20200119最新
+            testespresso   : 'androidx.test.espresso:espresso-core:3.2.0',//20200119最新
+            testjunit      : 'junit:junit:4.12',//20200119最新
+            /* （1）基础android开发库，如：recyclerview*/
+            appcompat      : 'androidx.appcompat:appcompat:1.2.0',//20201228最新
+            constraint     : 'androidx.constraintlayout:constraintlayout:2.0.4',//20201228最新
+            design         : 'com.google.android.material:material:1.2.1',
+
+            recyclerview   : 'androidx.recyclerview:recyclerview:1.2.0-alpha06',
+            legacy         : 'androidx.legacy:legacy-support-v4:1.0.0',
+            swiperefresh   : 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0',
+
+            //  (2)相机拍照google新特性20200113
+            concurrent     : 'androidx.concurrent:concurrent-futures:1.0.0',
+            cameralifecycle: 'androidx.camera:camera-lifecycle:1.0.0-alpha01',
+            cameracore     : 'androidx.camera:camera-core:1.0.0-alpha08',
+            cameracamera2  : 'androidx.camera:camera-camera2:1.0.0-alpha05',
+
+            // ucrop
+//            exifinterface      : 'androidx.exifinterface:exifinterface:1.1.0-beta01',
+//            transition         : 'androidx.transition:transition:1.2.0-rc01',
+
+            // （3）网络请求等模块
+            retrofit       : 'com.squareup.retrofit2:retrofit:2.6.2',//20191128
+            gson           : 'com.squareup.retrofit2:converter-gson:2.6.2',//20191128
+            rxjava2        : 'com.squareup.retrofit2:adapter-rxjava2:2.6.2',//20191128
+            iorxjava2      : 'io.reactivex.rxjava2:rxjava:2.2.15',//20191203
+            iorxandroid2   : 'io.reactivex.rxjava2:rxandroid:2.1.1',//20191203
+
+
+            // （4）其它模块
+            glide          : 'com.github.bumptech.glide:glide:4.10.0',//20191128
+            glidecompiler  : 'com.github.bumptech.glide:compiler:4.10.0',//20191128
+            multidex       : 'androidx.multidex:multidex:2.0.1'//20200425
+    ]
+}
