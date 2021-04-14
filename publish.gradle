@@ -12,7 +12,7 @@ task androidSourcesJar(type: Jar) {
 ext {
     PUBLISH_GROUP_ID = 'com.github.qydq'
     PUBLISH_ARTIFACT_ID = 'livery'
-    PUBLISH_VERSION = '1.2.12'
+    PUBLISH_VERSION = '1.2.13'
 }
 //ext {
 //    PUBLISH_GROUP_ID = 'com.sunsta.livery'
