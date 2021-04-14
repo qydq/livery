@@ -50,7 +50,7 @@ dependencies {
     // 视频压缩情景1需要的模块:https://github.com/Tourenathan-G5organisation/SiliCompressor
     implementation 'com.iceteck.silicompressorr:silicompressor:2.2.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(':life')
+    implementation project(':liveries')
     /**
      * mark：使用livery提供的navigation所需要的依赖.
      * */

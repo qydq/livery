@@ -1,0 +1,94 @@
+apply plugin: 'com.android.library'
+
+/* *
+ * mark：bintray发布时的依赖必须
+ *
+ * */
+//apply plugin: 'com.novoda.bintray-release'
+
+apply plugin: 'com.github.dcendents.android-maven' //this way we can find the android-maven in jcenter
+group = 'com.github.qydq' //this is your github name
+
+android {
+    compileSdkVersion cfgs.compileSdkVersion
+    buildToolsVersion cfgs.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion cfgs.minSdkVersion
+        targetSdkVersion cfgs.targetSdkVersion
+
+        versionCode cfgs.liveryVersionCode
+        versionName cfgs.liveryVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+        multiDexEnabled true
+
+        resConfigs "zh"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/drawable-v24'] } }
+//    compileOptions {
+//        sourceCompatibility = 1.8
+//        targetCompatibility = 1.8
+//    }
+    /**
+     * mark：Java8 引入编译的严谨写法
+     * */
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api "androidx.concurrent:concurrent-futures:${cfgs.futures_version}"
+    api "com.squareup.okio:okio:${cfgs.okio_version}"
+    api "androidx.camera:camera-lifecycle:${cfgs.camerax_version}"
+    api "androidx.camera:camera-core:${cfgs.camera_core_version}"
+    api "androidx.camera:camera-camera2:${cfgs.camerax_version}"
+
+    /**
+     * mark：引用本地库angux，这里的angux为alidd:1.1.4等同效果，在发布livery框架时，需要注释掉本地库
+     * */
+//    api project(':angux')
+    api 'com.github.qydq:bear:1.2.12'
+    /**
+     * mark：引用bintray中远程库，这里的alidd:1.1.4与本地库angux等同，在发布livery框架时，使用api依赖bintray库
+     * */
+//    api 'com.sunsta.bear:bear:1.1.11'
+}
+
+
+/* *
+ * mark：bintray发布时的依赖必须&&20191126 新增
+ *
+ * */
+//publish {
+//    userOrg = 'qydq'// 注册bintray时的username
+//    groupId = cfgs.liveryGroupId// maven包名
+//    artifactId = 'livery'// maven项目名
+//    publishVersion = cfgs.liveryVersionName// 发布版本号
+//    desc = '依赖引用最新picture版本'// 项目描述，可选项
+//    website = 'net://github.com/qydq/ali-samples'// 项目站点，可选项
+//}
+//ext {
+//    PUBLISH_ARTIFACT_ID = "livery"//你的artifact_id，一般是module的名字
+//}
+
+ext {
+    PUBLISH_GROUP_ID = "com.github.qydq"
+    PUBLISH_ARTIFACT_ID = 'livery'
+    PUBLISH_VERSION = cfgs.liveryVersionName
+}
+apply from: '../publish.gradle'
