@@ -17,8 +17,8 @@ ext {
             bearVersionName               : "1.1.105",
 
             liveryGroupId                 : "com.sunsta.livery",
-            liveryVersionCode             : 12016,
-            liveryVersionName             : "1.2.16",
+            liveryVersionCode             : 12017,
+            liveryVersionName             : "1.2.17",
 
             //open version control
             androidSupportVersion         : "27.0.2",
