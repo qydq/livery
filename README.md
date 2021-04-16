@@ -1,14 +1,15 @@
+
 **Table of Contents**  *generated with [sunst0069] Engilish  China(https://zhihu.com/people/qydq)*
 
-# **android快速集成基础框架 - Livery```1.2.0```**
+# **android快速集成基础框架 - Livery```1.2.18```**
 
 [![Apache-2.0](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](https://github.com/qydq/alidd-sample/blob/main/LICENSE)
 [![Download](https://api.bintray.com/packages/qydq/maven/livery/images/download.svg)](https://bintray.com/qydq/maven/livery/_latestVersion)
-[![JCenter](https://img.shields.io/badge/%20JCenter%20-1.2.0-5bc0de.svg)](https://bintray.com/qydq/maven/livery/_latestVersion)
+[![JCenter](https://img.shields.io/badge/%20JCenter%20-1.2.18-5bc0de.svg)](https://bintray.com/qydq/maven/livery/_latestVersion)
 ![@sunst](https://avatars0.githubusercontent.com/u/20716264?s=60&u=ec068ee954f943483fbf1516803dcd5b77520ad3&v=4)
 
 [![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2021%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=21)
-[![Release Version](https://img.shields.io/badge/release-1.2.0-red.svg)](https://github.com/qydq/small-video-record/releases)
+[![Release Version](https://img.shields.io/badge/release-1.2.18-red.svg)](https://github.com/qydq/small-video-record/releases)
 [![](https://img.shields.io/badge/Author-sunst-blue.svg)](https://www.zhihu.com/people/qydq)
 
 [***中文API帮助文档1.2下载`密码:xeq0`)***](https://pan.baidu.com/s/1yczO3lh4p8Njc_rdb9Fe5g) 一款针对Android平台下快速集成**便捷开发**框架```livery```，帮助开发者**架构企业级**应用.
@@ -19,9 +20,11 @@
 **⚠️注意**
 
 >* `Livery版本`1.2.x`与`1.1.x不完全兼容，由`1.1.x`升级到`1.2.x`参考[**`升级指南`**](https://github.com/qydq/livery/blob/main/guide_version.md).
+>* `Livery`遵循`免费开源协议`，如果满意你可以在此`LICENSE`下使用，借鉴修改，如果TA能够对你有帮助，o那真是万幸.
+>* 如果不满意请友好提出，注明错误的详细信息或修改建议，好的想法你也可以直接提交到repo中，以便能帮助到更多的小伙伴；如果你觉得实在是没用，也请你做一个有自我修养的人.
 >* `Livery`一直维护，有问题提[**`issues`**](https://github.com/qydq/livery/issues)（或在[**`知乎Bgwan`**](https://www.zhihu.com/people/qydq)上给我留言，**问题描述清楚**就行]，一般修复好周7当晚更新.
 
-`2021-01-30)`当前livery最新版本为[![](https://api.bintray.com/packages/qydq/maven/livery/images/download.svg)](https://bintray.com/qydq/maven/livery/_latestVersion)，建议使用最新版本。查看[**`旧版本日志`**](#%E7%89%88%E6%9C%AC%E6%97%A5%E5%BF%97-version-log)也可以了解到livery的使用方法.
+`2021-04-16)`当前livery最新版本为[![](https://api.bintray.com/packages/qydq/maven/livery/images/download.svg)](https://bintray.com/qydq/maven/livery/_latestVersion)，建议使用最新版本。查看[**`旧版本日志`**](#%E7%89%88%E6%9C%AC%E6%97%A5%E5%BF%97-version-log)也可以了解到livery的使用方法.
 
 
 [**我的唯一知乎地址.**](https://www.zhihu.com/people/qydq/columns)&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;（感谢关注🙏）
@@ -42,7 +45,7 @@
 - [x] 图库选择（☀️ [**`PictureSelector`**](https://github.com/LuckSiege/_PictureSelector_)并整合原TakePhoto模块，视频预览图MediaHelper）.
 - [x] StrictMode API禁 权限便捷申请.
 ### 2：可选能力
-- [x] 快速集成你的导航栏工具  .
+- [x] 快速集成你的导航栏工具 .
 - [x] INA系列控件相关，如标题栏，状态视图.
 - [x] 漫天飞羽弹幕使（☀️ B站有了一个烈焰弹幕使、这里命名为：`漫天飞羽`）.
 - [x] ```LA```系列实用能力集，如MD5/AES加密，日志，屏幕尺寸，模糊算法.
@@ -51,29 +54,46 @@
 - [x] Glide图片加载引擎GlideEngine（☀️ Glide版本为：4.10.0）.
 - [ ] 正在开发ing...智能语音唤醒监听能力（世界上最美的就是声音Voice ）.
 
-&#8194;&#8194;&#8194;&#8194;&#8194;[**最新体验扫描二维码下载hong1.2.0.apk**](https://github.com/qydq/livery/blob/main/demo/demo_livery.apk)&#8194;&#8194;&#8194;&#8194;
+&#8194;&#8194;&#8194;&#8194;&#8194;[**最新体验扫描二维码下载hong1.2.18.apk**](https://github.com/qydq/livery/blob/main/demo/demo_livery.apk)&#8194;&#8194;&#8194;&#8194;
 
 ![](https://github.com/qydq/livery/blob/main/image/qr_demo.png?raw=true)
 
 ## **集成方式# Binaries**
 
-集成方式有以下两种
-
-### 1.(建议)通过JCenter集成
-在你项目**`（app module）`**的**`build.gradle`**中添加（致谢JitPack和Jcenter）.
+集成方式有以下三种  ，集成之前，先在你的项目根目录`build.gradle`文件的`allprojects→repositories`属性下加入远程库地址.
+```groovy
+repositories {
+        google()//顺序1
+//        jcenter() // Warning: this repository is going to shut down soon in 2022/02/01
+        maven { url 'https://jitpack.io' }//顺序2
+        mavenCentral()//顺序3
+        maven { url 'https://maven.aliyun.com/repository/releases' }//可选顺序4
+    }
+```
+**⚠️注意**
+>由于[**`Jcenter服务即将关闭`**](https://zhuanlan.zhihu.com/p/363156372)，请按照以上远程库的顺序配置.
+### 1.(建议)通过maven集成
+在你项目**`（app module）`**的**`build.gradle`**中添加（致谢JitPack和sonatype）.
+```Groovy
+dependencies {
+  implementation'com.github.qydq:livery:1.2.18'
+}
+```
+### 2.(不再建议)通过JCenter集成
+在你项目**`（app module）`**的**`build.gradle`**中添加（感谢Jcenter）.
 
 ```Groovy
 dependencies {
-  implementation'com.sunsta.livery:livery:1.2.0'
+  implementation'com.sunsta.livery:livery:1.2.18'
 }
 ```
 
-### 2.(可选)手动集成
-[***下载Livery最新版本1.2.0`密码:srrh`)***](https://pan.baidu.com/s/1ttAB7Zp3fHvzlEXzsgUEug)，然后将`AAR`拷贝到libs目录中添加引用关系.
+### 3.(可选)手动集成
+[***下载Livery最新版本1.2.18`密码:srrh`)***](https://pan.baidu.com/s/1ttAB7Zp3fHvzlEXzsgUEug)，然后将`AAR`拷贝到libs目录中添加引用关系.
 
 ```Groovy
 dependencies {
-  implementation(name:'livery1.2.0', ext:'aar')
+  implementation(name:'livery1.2.18', ext:'aar')
 }
 ```
 
@@ -89,7 +109,7 @@ public class XxxApplication extends AnApplication {
         super.onCreate();
         Livery.instance().initialze("BASE_URL");
         Livery.instance().enableLog(DEBUG,"LOGFILTER);//当配置该内容时候，会打印Livery关键建议信息
-    }
+  }
 ```
 **⚠️注意**
 > `BASE_URL`是符合Retrofit的网络请求地址，如：`https://api.github.com/`，需要以`/`结尾，最后把`XxxApplication`添加到`AndroidManifest.xml`中.
@@ -237,7 +257,7 @@ public interface HongApi {
 public class HongApiImpl {
     /**
      * （建议）网络请求实现接口1 : 默认含`BASE_URL="https://api.github.com/"`的请求域
-     */
+  */
     public static HongApi api() {
         return InternetClient.getInstance().getRetrofit().create(HongApi.class);
     }
@@ -320,16 +340,16 @@ addDispose(HongApiImpl.api().get_observable_github_user(params)
 
 核心是DownloaderAsyncTask结合`RxAndroid`与`InternetClient`，支持**断点续传**（默认开启），单个\多个**文件下载**，暂停\取消，数据库状态持久化，下载完成通知提醒（可选），支持apk文件自动安装.
 
-这里以同时下载livery1.2.0.aar和livery1.2.0doc.zip文件示例
+这里以同时下载livery1.2.18.aar和livery1.2.18doc.zip文件示例
 
 **第1步：定义一个下载的方法`preDownload()`准备下载**
 
 ```java
 /*
  * 1.先判断网络是否可用，是否为WIFI（这里移动网络不可下载）
- * 2.下载之前先根据下载文件的id查找上次下载的信息（这里，如果已经下载`(下载完成)`过则不会再次下载，如果是意外断掉也可以获得之前下载的信息（比如进度69%）
- * 3.如果downloader为null，则是一个新下载
- * */
+  * 2.下载之前先根据下载文件的id查找上次下载的信息（这里，如果已经下载`(下载完成)`过则不会再次下载，如果是意外断掉也可以获得之前下载的信息（比如进度69%）
+  * 3.如果downloader为null，则是一个新下载
+  * */
 private void preDownload(int id, String url) {
     if (NetBroadcastReceiverUtils.isConnectedToInternet(mContext)) {
         if (!NetBroadcastReceiverUtils.isMobileConnected(mContext)) {
@@ -410,13 +430,13 @@ private void download(int id, String url) {
 aarButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        preDownload(69,"https://api.github.com/download/livery1.2.0.aar");
+        preDownload(69,"https://api.github.com/download/livery1.2.18.aar");
     }
 });
 doczipButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        preDownload(96,"https://api.github.com/download/livery1.2.0doc.zip");
+        preDownload(96,"https://api.github.com/download/livery1.2.18doc.zip");
     }
 });
 ```
@@ -439,9 +459,9 @@ if (!TextUtils.isEmpty(resultFilePath)) {
     File resultFile = new File(resultFilePath);
     if (FileUtils.INSTANCE.isFileExists(resultFile)) {
         FasterIntents.launchAppPath(mContext, resultFilePath);//调用系统app应用打开文件
-    } else {
+  } else {
         InternetClient.getInstance().updateFaiure(url, id);//文件损坏，是否要重新下载
-        //notifyItemChanged(mod.getPosition());//更新UI
+  //notifyItemChanged(mod.getPosition());//更新UI
     }
 }
 ```
@@ -544,12 +564,12 @@ private void showDanMu2() {
     barrage.setGifIvId3(R.mipmap.gif3);
     barrage.setUserName("sunst0069");
     barrage.setBarrageLayout(R.layout.an_item_barrage);//弹幕的layout，可以自定义
-    barrage.setBackground(R.mipmap.image_select);
+  barrage.setBackground(R.mipmap.image_select);
     barrage.setContent("亲爱的热爱的进入了你的房间");
     barrage.setBarrageFloat(true);
     barrage.setBarrageFloatSpeed(1800L);
 //    mBarrageAdapter.addBarrage(barrage);//显示弹幕方法1（默认）
-    mBarrageAdapter.addBarrage(barrage, new OnBarrageLayout() {
+  mBarrageAdapter.addBarrage(barrage, new OnBarrageLayout() {
         @Override
         public View barrageLayout(View layoutView, Barrage barrage) {
             return mBarrageAdapter.loadBarrageData(layoutView, barrage);
@@ -565,7 +585,7 @@ mBarrageAdapter.addBarrage(barrage, new OnBarrageLayout() {
         BarrageItemView barrageItem = mBarrageAdapter.getBarrageItemView(layoutView, barrage);
         //barrageItem.getXXX().setXXX()
         return barrageItem.getConverView();//显示弹幕方法3（每条弹幕单独控制）
-    }
+  }
 });
 ```
 在遵循`an_item_barrage.xml`控件命名的情况下，通过barrageItem对象能够获取每一个弹幕布局的控件.
@@ -721,7 +741,7 @@ tools:replace="android:icon,android:theme,android:label,android:allowBackup,andr
 这是rxJava冲突，在app目录的build.gradle下添加
 ```Groovy
  packagingOptions {
-	exclude 'META-INF/rxjava.properties'
+   exclude 'META-INF/rxjava.properties'
  }
 ```
 ### [更多：其它android中常见错误解决方法点击这里查看。](https://github.com/qydq/livery/blob/main/error.md)
@@ -729,7 +749,7 @@ tools:replace="android:icon,android:theme,android:label,android:allowBackup,andr
 ## **版本日志# Version LOG**
 `Livery`框架AAR`与`初始APP或DEMO版本`日志记录
 
-| **版本** *`(日期)`*   |项目|APK  |AAR`release` |备注（版本大小演变说明）  |
+| **版本** *`(日期)`*   |项目|APK  |AAR`release` |备注（版本大小演变说明） |
 | --------                   | ----:|-----:   |-----: |                :---- |
 |**~~v0.0.69~~** *`(2018/06/09)`*|#|#|#|`18年`初始版本`项目H`为**小团子芳儿**开发的一款**聊天APP**|
 |**~~v1.0.1~~** *`(2019/12/31)`*| 180M |   7.5M  | 6.4M  |[推广引入`livery`首发-INATabLayout使用案例](https://zhuanlan.zhihu.com/p/100098139)|
@@ -868,7 +888,7 @@ return intent;
 ```
 
 ## **致谢**
-非常感谢以下前辈（or开源组织机构）的开源精神，当代互联网的发展离不开前辈们的分享，Livery的成功发布也是.  <br/>   再次感谢🙏。最后感谢优秀的[Github](https://github.com)代码管理平台（排名不分先后）  .
+非常感谢以下前辈（or开源组织机构）的开源精神，当代互联网的发展离不开前辈们的分享，Livery的成功发布也是.  <br/>   再次感谢🙏。最后感谢优秀的[Github](https://github.com)代码管理平台（排名不分先后） .
 - [x] [致敬与缅怀-雷霄骅前辈](https://blog.csdn.net/leixiaohua1020 "雷霄骅")
 - [x] [yalantis](https://www.runoob.com/w3cnote/android-ui-framework.html)
 - [ ] [darsh2](https://github.com/darsh2/MultipleImageSelect)
