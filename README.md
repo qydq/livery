@@ -20,8 +20,8 @@
 **⚠️注意**
 
 >* `Livery版本`1.2.x`与`1.1.x不完全兼容，由`1.1.x`升级到`1.2.x`参考[**`升级指南`**](https://github.com/qydq/livery/blob/main/guide_version.md).
->* `Livery`遵循`免费开源协议`，如果满意你可以在此`LICENSE`下使用，借鉴修改，如果TA能够对你有帮助，o那真是万幸.
->* 如果不满意请友好提出，注明错误的详细信息或修改建议，好的想法你也可以直接提交到repo中，以便能帮助到更多的小伙伴；如果你觉得实在是没用，也请你做一个有自我修养的人.
+>* `Livery`遵循`免费开源协议`，你可以在此`LICENSE`下使用，借鉴修改，如果能够对你有所帮助，那真是万幸.
+>* 如果不满意请友好提出，注明错误的详细信息或修改建议，好的想法亦可直接提交至repo；如果你觉得实在是没用，也请你做一个有自我修养的人.
 >* `Livery`一直维护，有问题提[**`issues`**](https://github.com/qydq/livery/issues)（或在[**`知乎Bgwan`**](https://www.zhihu.com/people/qydq)上给我留言，**问题描述清楚**就行]，一般修复好周7当晚更新.
 
 `2021-04-16)`当前livery最新版本为[![](https://api.bintray.com/packages/qydq/maven/livery/images/download.svg)](https://bintray.com/qydq/maven/livery/_latestVersion)，建议使用最新版本。查看[**`旧版本日志`**](#%E7%89%88%E6%9C%AC%E6%97%A5%E5%BF%97-version-log)也可以了解到livery的使用方法.
@@ -60,7 +60,7 @@
 
 ## **集成方式# Binaries**
 
-集成方式有以下三种  ，集成之前，先在你的项目根目录`build.gradle`文件的`allprojects→repositories`属性下加入远程库地址.
+集成方式有三种  ，集成之前，先在你项目的根目录`build.gradle`文件`allprojects→repositories`属性下加入远程库地址.
 ```groovy
 repositories {
         google()//顺序1
@@ -73,14 +73,14 @@ repositories {
 **⚠️注意**
 >由于[**`Jcenter服务即将关闭`**](https://zhuanlan.zhihu.com/p/363156372)，请按照以上远程库的顺序配置.
 ### 1.(建议)通过maven集成
-在你项目**`（app module）`**的**`build.gradle`**中添加（致谢JitPack和sonatype）.
+在你项目`（app module）`的**`build.gradle`**中添加（致谢JitPack和sonatype）.
 ```Groovy
 dependencies {
   implementation'com.github.qydq:livery:1.2.18'
 }
 ```
 ### 2.(不再建议)通过JCenter集成
-在你项目**`（app module）`**的**`build.gradle`**中添加（感谢Jcenter）.
+在你项目`（app module）`的**`build.gradle`**中添加（感谢Jcenter）.
 
 ```Groovy
 dependencies {
