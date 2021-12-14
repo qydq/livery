@@ -1,3 +1,45 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [**android快速集成基础框架 - Livery```1.2.18```**](#android%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6---livery1218)
+  - [**情景能力# Ability**](#%E6%83%85%E6%99%AF%E8%83%BD%E5%8A%9B-ability)
+    - [1：核心能力](#1%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B)
+    - [2：可选能力](#2%E5%8F%AF%E9%80%89%E8%83%BD%E5%8A%9B)
+  - [**集成方式# Binaries**](#%E9%9B%86%E6%88%90%E6%96%B9%E5%BC%8F-binaries)
+    - [3.(可选)手动集成](#3%E5%8F%AF%E9%80%89%E6%89%8B%E5%8A%A8%E9%9B%86%E6%88%90)
+  - [**使用步骤# Use Step**](#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4-use-step)
+    - [（可选）第1步：配置主Application](#%E5%8F%AF%E9%80%89%E7%AC%AC1%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%BBapplication)
+    - [第2步：配置AndroidManifest.xml](#%E7%AC%AC2%E6%AD%A5%E9%85%8D%E7%BD%AEandroidmanifestxml)
+  - [**模块介绍# Details Module**](#%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D-details-module)
+    - [1.核心情景能力演示](#1%E6%A0%B8%E5%BF%83%E6%83%85%E6%99%AF%E8%83%BD%E5%8A%9B%E6%BC%94%E7%A4%BA)
+      - [核心主窗口类](#%E6%A0%B8%E5%BF%83%E4%B8%BB%E7%AA%97%E5%8F%A3%E7%B1%BB)
+      - [网络请求](#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82)
+      - [文件下载](#%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD)
+    - [2.可选情景能力演示](#2%E5%8F%AF%E9%80%89%E6%83%85%E6%99%AF%E8%83%BD%E5%8A%9B%E6%BC%94%E7%A4%BA)
+      - [高效GIF加载](#%E9%AB%98%E6%95%88gif%E5%8A%A0%E8%BD%BD)
+      - [漫天飞羽弹幕使](#%E6%BC%AB%E5%A4%A9%E9%A3%9E%E7%BE%BD%E5%BC%B9%E5%B9%95%E4%BD%BF)
+    - [3.DEMO演示](#3demo%E6%BC%94%E7%A4%BA)
+  - [**混淆配置# proguard-rules**](#%E6%B7%B7%E6%B7%86%E9%85%8D%E7%BD%AE-proguard-rules)
+  - [**常见错误# Easy Mistake**](#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF-easy-mistake)
+    - [非常重要1：1.1.x版本用androidx，替换掉了所有的support-v4,v7包.](#%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81111x%E7%89%88%E6%9C%AC%E7%94%A8androidx%E6%9B%BF%E6%8D%A2%E6%8E%89%E4%BA%86%E6%89%80%E6%9C%89%E7%9A%84support-v4v7%E5%8C%85)
+    - [非常重要2： Manifest merger failed : Attribute meta-data#android.support.FILE_PROVIDER_PATHS.](#%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%812-manifest-merger-failed--attribute-meta-dataandroidsupportfile_provider_paths)
+    - [非常重要3：This project uses AndroidX dependencies, but the 'android.useAndroidX' property is not enabled. Set this property to true in the gradle.properties file and retry.](#%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%813this-project-uses-androidx-dependencies-but-the-androiduseandroidx-property-is-not-enabled-set-this-property-to-true-in-the-gradleproperties-file-and-retry)
+    - [注意事项1：Attribute application@theme value=(@style/AppTheme) from AndroidManifest.xml:11:9-40 is also present at [com.sunsta.livery:livery:1.2.x] AndroidManifest.xml](#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B91attribute-applicationtheme-valuestyleapptheme-from-androidmanifestxml119-40-is-also-present-at-comsunstaliverylivery12x-androidmanifestxml)
+  - [**版本日志# Version LOG**](#%E7%89%88%E6%9C%AC%E6%97%A5%E5%BF%97-version-log)
+    - [1.Livery AAR framework记录](#1livery-aar-framework%E8%AE%B0%E5%BD%95)
+    - [2.Livery DEMO apk下载及其说明](#2livery-demo-apk%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%85%B6%E8%AF%B4%E6%98%8E)
+    - [~~1.0.x版本总述 ~~](#10x%E7%89%88%E6%9C%AC%E6%80%BB%E8%BF%B0-)
+    - [~~1.1.x版本总述 ~~](#11x%E7%89%88%E6%9C%AC%E6%80%BB%E8%BF%B0-)
+    - [~~1.2.x版本总述 ~~](#12x%E7%89%88%E6%9C%AC%E6%80%BB%E8%BF%B0-)
+  - [**其它说明# More**](#%E5%85%B6%E5%AE%83%E8%AF%B4%E6%98%8E-more)
+    - [关于自定义apk名说明](#%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89apk%E5%90%8D%E8%AF%B4%E6%98%8E)
+    - [关于应用内apk自动安装说明](#%E5%85%B3%E4%BA%8E%E5%BA%94%E7%94%A8%E5%86%85apk%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E)
+  - [**致谢**](#%E8%87%B4%E8%B0%A2)
+  - [**LICENSE**](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 **Table of Contents**  *generated with [sunst0069] Engilish  China(https://zhihu.com/people/qydq)*
 
